@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">RevisionMaster2</string>
+    <string name="button_help">Help</string>
+    <string name="button_Add">Add</string>
+    <string name="button_Revise">Revise</string>
+    <string name="button_Edit">Edit</string>
+    <string name="button_Delete">Delete</string>
+    <string name="textView_Term">Term</string>
+    <string name="textView_Def">Definition</string>
+    <string name="separator">-</string>
+    <string name="button_gameMatch">Mix and Match</string>
+    <string name="button_gameButtons">Fast clicker</string>
+    <string name="button_gameType">Fill the gap</string>
+    <string name="enterName">Enter the name of a new table to be created below.</string>
+    <string name="instruction">Type the term defined below and confirm.</string>
+    <string name="confirm">Confirm</string>
+    <string name="help">This app was created to make revision easier. Define your own sets of terms with their definitions by adding them in the main menu, and then editing. Then you can revise any of your sets and test yourself by playing games. "Fast clicker" requires you to press the button with the definition of a given term in limited time. "Fill the gap" makes you type the term corresponding to a given definition.</string>
+</resources>
