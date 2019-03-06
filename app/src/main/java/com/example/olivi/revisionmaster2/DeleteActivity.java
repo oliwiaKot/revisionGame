@@ -25,6 +25,9 @@ public class DeleteActivity extends Activity {
         initiateTextView();
     }
 
+    /**
+     * This method is called when the activity is created and it writes an appropriate message in the TextView depending on whether the user chose to delete a table or to delete a row from a table.
+     */
     public void initiateTextView(){
 
         TextView text = findViewById(R.id.textViewDelete);
@@ -37,6 +40,10 @@ public class DeleteActivity extends Activity {
         }
     }
 
+    /**
+     * This method is called when the user clicks a button confirming their choice to delete a table or a table row. It then calls the deleteRow or deleteTable from the GameHelper class depending on whether the user chose to delete a table or a table row.
+     * @param view allows to assign this method to the appropriate button in xml.
+     */
     public void onDeleteConfirmed(View view){
         TableHelper helper = new TableHelper();
         if(tableName.equals("TABLE_OF_NAMES")){

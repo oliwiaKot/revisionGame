@@ -9,25 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainMenuActivity">
+        <activity android:name=".MainMenuActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddTableActivity" />
-        <activity android:name=".EditTableActivity" />
-        <activity android:name=".DeleteActivity" />
-        <activity android:name=".RevisionMenuActivity" />
-        <activity android:name=".FastClickerActivity" />
-        <activity android:name=".TypeActivity" />
+        <activity android:name=".AddTableActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".EditTableActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DeleteActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RevisionMenuActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FastClickerActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TypeActivity"
+            android:screenOrientation="portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".HelpActivity" />
+        <activity android:name=".HelpActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

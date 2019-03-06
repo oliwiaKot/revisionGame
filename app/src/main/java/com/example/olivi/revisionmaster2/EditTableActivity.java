@@ -44,6 +44,9 @@ public class EditTableActivity extends Activity {
         initRecyclerView();
     }
 
+    /**
+     * This method initiates a recycler view displaying the contents of the selected table and an option to delete them.
+     */
     public void initRecyclerView(){
         tableDefs.clear();
         tableTerms.clear();
@@ -59,6 +62,10 @@ public class EditTableActivity extends Activity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 
+    /**
+     * This method is called when the user chooses to add a new row to the table by clicking the button.
+     * @param view this parameter is used to assign this method to the appropriate button in xml.
+     */
     public void onAddRowClicked(View view){
         String term;
         String def;

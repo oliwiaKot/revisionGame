@@ -39,6 +39,11 @@ public class TypeActivity extends Activity {
 
     }
 
+    /**
+     * This method is used when the user confirms their answer (user input in EditText) by clicking a button. It checks whether the answer is correct and displays
+     * an appropriate message in a TextView, then displays next definition to be tested.
+     * @param view is used to assign this method to the appropriate button.
+     */
     public void onConfirmAnswer(View view){
         EditText answer = findViewById(R.id.editTextAnswer);
         TextView textView = findViewById(R.id.textViewisAnswerCorrect);

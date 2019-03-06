@@ -44,7 +44,9 @@ public class RevisionMenuActivity extends Activity {
         initRecyclerView();
     }
 
-
+    /**
+     *This method initiates the recycler view containing names of existing tables and buttons allowing to view their contents, delete them or edit their contents.
+     */
     public void initRecyclerView(){
         tableDefs.clear();
         tableTerms.clear();
@@ -61,7 +63,10 @@ public class RevisionMenuActivity extends Activity {
     }
 
 
-
+    /**
+     * This method starts a new activity when the button is clicked.
+     * @param view allows the assignment of this method to the appropriate button in xml.
+     */
     public void onTypeClicked(View view){
         Intent intent = new Intent(this, TypeActivity.class);
         intent.putExtra(TypeActivity.TABLE_TERMS, tableTerms);
@@ -70,6 +75,10 @@ public class RevisionMenuActivity extends Activity {
         finish();
     }
 
+    /**
+     * This method starts a new activity when the button is clicked.
+     * @param view allows the assignment of this method to the appropriate button in xml.
+     */
     public void onClickerClicked(View view){
         Intent intent = new Intent(this, FastClickerActivity.class);
         intent.putExtra(FastClickerActivity.TABLE_TERMS, tableTerms);

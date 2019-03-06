@@ -47,6 +47,14 @@ public class FastClickerActivity extends Activity {
         gameTimer.start();
     }
 
+    /**
+     * This method assigns the available answers to 3 buttons on the screen.
+     * It first calls the getTwoOtherButtons method from GameHelper class to select at random the two wrong terms.
+     * Then it selects at random the button with the correct answer.
+     * After that, the getTwoOtherButtons method is called again, to select at random which of the remaining two buttons will be assigned to which one of the "wrong" terms.
+     * Then, for each button, the method setButtonsText is called.
+     * Then the text of the tested definition is animated to appear in the central TextView on the screen.
+     */
     public void assignButtons(){
         int[] otherTwoButtons = gameHelper.getTwoOtherButtons(termsOrderArray[currentTerm], tableTerms.size());
         Random random = new Random();
@@ -62,6 +70,12 @@ public class FastClickerActivity extends Activity {
 
 
     }
+
+    /**
+     * This method is used to put appropriate text on a selected button.
+     * @param i is the button number.
+     * @param text is the text to be written on the button.
+     */
 
     public void setButtonsText(int i, String text){
         Button button;
@@ -87,7 +101,14 @@ public class FastClickerActivity extends Activity {
     }
 
 
-
+    /**
+     * This method is called when the user clicks one of the answer buttons. It detects which button was clicked.
+     * Then it checks if the answer is correct by calling the isTheAnswerCorrect method from the GameHelper class.
+     * If the answer is correct,  the user gets extra time and an appropriate message in the textview.
+     * If the answer is not correct, no time is added and an appropriate message is displayed.
+     * It then increases the currenTerm value and calls the assignButtons method again to test the next definition.
+     * @param view allows the assignment of this method to the appropriate buttons in xml.
+     */
     public void onAnswerClicked(View view){
         Button buttonClicked = findViewById(view.getId());
         TextView textView = findViewById(R.id.textView_correct);
@@ -121,6 +142,12 @@ public class FastClickerActivity extends Activity {
 
     }
 
+    /**
+     * This method is called when the activity starts or when the user answers correctly.
+     * The countdown timer updates the progress bar on the screen, telling the user how much time they have left.
+     * @return this method returns a new countdown timer
+     *
+     */
     public CountDownTimer getNewTimer(){
         return new CountDownTimer( playingTimeLeft, 70) {
 

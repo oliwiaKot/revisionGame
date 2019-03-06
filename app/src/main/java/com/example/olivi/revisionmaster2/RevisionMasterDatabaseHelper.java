@@ -38,12 +38,19 @@ public class RevisionMasterDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-
+    /**
+     * This method creates a table containing the names of all the user-defined tables when the database is created.
+     * @param db is the database in which the table is created.
+     */
     public void CreateTableOfTables (SQLiteDatabase db){
 
         db.execSQL("CREATE TABLE TABLE_OF_NAMES (NUMBER INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT);");
     }
 
+    /**
+     * This method creates a demo table filled with terms and their definitions when the database is created.
+     * @param db is the database in which the table is created.
+     */
     //przykladowa pierwsza tabela w bazie danych
     public void CreateDemoTable(SQLiteDatabase db){
         String tName = "English Numbers Demo";
@@ -61,6 +68,11 @@ public class RevisionMasterDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This method creates a new table with a given name in the database.
+     * @param tableName is the name of the table to be created.
+     * @param db is the database in which the table is created.
+     */
     public void CreateTable(String tableName, SQLiteDatabase db){
 
         //tworzymy tabelę o zadanej nazwie i kolumnach: numer, termin i definicja
@@ -71,6 +83,13 @@ public class RevisionMasterDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This method inserts one row of data into a selected table in the database.
+     * @param tableName is the name of the selected table in the database.
+     * @param term is the value to be put into the TERM column.
+     * @param definition is the value to be put into the DEFINITION column.
+     * @param db is the database in which the table is created.
+     */
     public void InsertRow(String tableName, String term, String definition,SQLiteDatabase db  ){
 
         ContentValues values = new ContentValues(); //nie daje id bo samo sie wygeneruje
@@ -80,11 +99,22 @@ public class RevisionMasterDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    /**
+     * This method deletes a selected table from the database.
+     * @param db is the database in which the table is created.
+     * @param tableName is the name of the table to be deleted from the database.
+     */
     public void DropTable(SQLiteDatabase db, String tableName){
         db.execSQL("DELETE FROM TABLE_OF_NAMES WHERE NAME='"+tableName+"';");
         db.execSQL("DROP TABLE IF EXISTS '" + tableName + "';");
     }
 
+    /**
+     * This method deletes a selected row from a given table in the database.
+     * @param db is the database in which the table is created.
+     * @param tableName is the name of the table from which one row is to be deleted.
+     * @param termName is the value of the TERM column in the row to be deleted.
+     */
     public void DeleteRow(SQLiteDatabase db, String tableName, String termName){
         db.execSQL("DELETE FROM " + "'" + tableName + "' WHERE TERM='" + termName + "';" );
     }

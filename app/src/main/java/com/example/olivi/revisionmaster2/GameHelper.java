@@ -12,7 +12,10 @@ public class GameHelper {
         this.tableTerms = tableTerms;
     }
 
-    //metoda do ustalenia kolejności testowanych pojęć
+    /**
+     * This method is used to get a random order of the terms in a selected table without repetition.
+     * @return orderArray - this method returns a table of integers, containing indexes of terms in a selected table, in a random order, without repetition.
+     */
     public int[] getOrder(){
         int[] orderArray = new int[tableTerms.size()];
         boolean[] isThisIndexUsed = new boolean[tableTerms.size()];
@@ -39,7 +42,12 @@ public class GameHelper {
 
     }
 
-    //metoda wypełniająca pozostałe 2 niepoprawne odpowiedzi
+    /**
+     * This method allows to obtain two random integers in a given interval, excluding one value, without repetition.
+     * @param indexOfCorrect is the integer to be excluded.
+     * @param size is the interval in which the two random integers are to be in.
+     * @return otherButtonsIndexes - this method returns a table of integers, containing the two random integers.
+     */
     public int[] getTwoOtherButtons(int indexOfCorrect, int size){
         int[] otherButtonsIndexes = new int[2];
         otherButtonsIndexes[0] = indexOfCorrect;
@@ -57,6 +65,12 @@ public class GameHelper {
         return otherButtonsIndexes;
     }
 
+    /**
+     * This method checks if user input matches the required value.
+     * @param myAnswer is the user input.
+     * @param correctAnswer is the required value that the user input is compared to.
+     * @return - this method returns true when user input matches the required value and false otherwise.
+     */
     public boolean isTheAnswerCorrect(String myAnswer, String correctAnswer){
         if(myAnswer.equals(correctAnswer)){
             return true;

@@ -33,6 +33,9 @@ public class MainMenuActivity extends Activity {
         initRecyclerView();
     }
 
+    /**
+     * This method initiates the recycler view containing names of existing tables and buttons allowing to view their contents, delete them or edit their contents.
+     */
     public void initRecyclerView(){
         RecyclerView recyclerView = findViewById(R.id.recycler_View_Main);
         RecyclerInitiator initiator = new RecyclerInitiator();
@@ -45,6 +48,10 @@ public class MainMenuActivity extends Activity {
 
     }
 
+    /**
+     * This method allows the user to add a new table by clicking a button. It starts a new activity.
+     * @param view allows the assignment of this method to the appropriate button in xml
+     */
     public void onAddTable(View view){
         Intent intent = new Intent(MainMenuActivity.this, AddTableActivity.class);
         intent.putExtra(AddTableActivity.NEW_TABLE_NAME, tableNames);
@@ -52,6 +59,10 @@ public class MainMenuActivity extends Activity {
 
     }
 
+    /**
+     * This method opens a help window by starting a new activity when the user clicks the button.
+     * @param view allows the assignment of the method to the appropriate button in xml.
+     */
     public void onHelp(View view){
         Intent intent = new Intent(MainMenuActivity.this, HelpActivity.class);
         startActivity(intent);

@@ -23,6 +23,11 @@ public class AddTableActivity extends Activity {
         Intent intent = getIntent();
         tableNamesExisting = intent.getStringArrayListExtra(NEW_TABLE_NAME);
     }
+
+    /**
+     * This method is called when the button is clicked to add a new table with a name given by the user.
+     * @param view allows to assign this method to the appropriate button in xml.
+     */
     public void onAddTableClicked(View view){
         EditText enteredName = findViewById(R.id.editText_tableName);
         String nameT = enteredName.getText().toString();
